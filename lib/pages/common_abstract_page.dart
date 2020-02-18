@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/configs/themes.dart';
 
 import '../configs/strings.dart';
 
-class CommonContainer extends StatelessWidget {
+///
+/// Common page. Encapsulate boiler plate like Scaffold.
+/// All pages  of the application must have it as child to have the same look.
+///
+class CommonAbstractPage extends StatelessWidget {
   final Widget child;
+  final String appBarTitle;
 
-  CommonContainer({this.child});
+  CommonAbstractPage({this.child, this.appBarTitle = STR.title});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +20,10 @@ class CommonContainer extends StatelessWidget {
       color: primaryColor,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(strTitle),
+          title: Text(appBarTitle),
         ),
         body: Container(
-          padding: EdgeInsets.all(5.0),
+          padding: EdgeInsets.all(VALUES.mediumMargin),
           constraints: BoxConstraints.expand(),
           color: backgroundColor,
           child: this.child,

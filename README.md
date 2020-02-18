@@ -1,16 +1,18 @@
 # github_dashboard
 
-A new Flutter application.
+A Flutter application to show public repositories on GitHub.
+
+Enter a github username and click the "search" button.
+
+You will see the photo and the name, and  below a list of the public repositories.
+
+Click on a repo to show detail on it.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This repo uses annotations.
+To generate code, use the command : "flutter packages pub run build_runner build".
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Check the strings.dart file, and add your github username and a github token (to generate  on github).
+static const username = ""; //Must be changed with your github username.
+static const accesstoken = ""; //Must be changed with your github token.

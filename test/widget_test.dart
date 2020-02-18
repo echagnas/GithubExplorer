@@ -9,9 +9,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:github_dashboard/main.dart';
+import 'package:github_dashboard/providers/search_viewmodel.dart';
+import 'package:github_dashboard/repositories/github_repository_mock_impl.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  /*testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
@@ -26,5 +28,20 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+  });*/
+
+  test('Search profile test', () {
+    print("sss");
+    var repository = GitHubRepositoryMockImpl();
+
+    //TODO BUG: the constructor seems to be not called!!!
+    var searchViewModel = SearchViewModel(
+      repository: repository,
+    );
+    expect(searchViewModel.repository != null, true,
+        reason: "repository == null");
+
+    searchViewModel.searchProfile("toto");
+    expect(searchViewModel.getName(), "toto");
   });
 }
