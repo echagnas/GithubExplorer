@@ -18,11 +18,11 @@ static const username = ""; //Must be changed with your github username.\
 static const accesstoken = ""; //Must be changed with your github token.
 
 ## TODO
-[] Widget for Avatar and Custom Card
-[] Manage errors from WS
-[] Unit tests
-[] Dependency injection
+[ ] Widget for Avatar and Custom Card\
+[ ] Manage errors from WS\
+[ ] Unit tests\
+[ ] Dependency injection
 
 ## BUGS
-- A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)
+- A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)\
 - in Unit test, the constructor of SearchViewModel seems to be not called...
