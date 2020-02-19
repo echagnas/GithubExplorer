@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:github_dashboard/pages/link_widget.dart';
+import 'package:github_dashboard/widgets/link_widget.dart';
 import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/widgets/avatar_widget.dart';
 import 'package:github_dashboard/widgets/card_widget.dart';
