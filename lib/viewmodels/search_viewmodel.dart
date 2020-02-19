@@ -18,25 +18,44 @@ class SearchViewModel extends ValueNotifier<ViewModelStatus<Profile>> {
   ///
   /// Retrieve profile.
   ///
-  void searchProfile(String login) {
+  void searchProfile(String login) async {
     value = Loading();
     notifyListeners();
-    repository.getProfile(login).then((resultProfile) {
-      value = Loaded(resultProfile);
-      _getRepositories(login);
-      notifyListeners();
-    });
+
+    (await repository.getProfile(login)).join(
+      ok: (profile) {
+        value = Loaded(profile);
+        notifyListeners();
+
+        //retrieve repositories
+        _getRepositories(login);
+      },
+      error: (error) {
+        value = Issue(error);
+      },
+    );
+  }
+
+  void reset() {
+    value = Empty();
+    notifyListeners();
   }
 
   ///
   /// Retrieve repositories.
   /// Called just after the result of the profile in background.
   ///
-  void _getRepositories(String login) {
-    repository.getRepositories(login).then((resultRepositories) {
-      _repositories = resultRepositories;
-      notifyListeners();
-    });
+  void _getRepositories(String login) async {
+    (await repository.getRepositories(login)).join(
+      ok: (repositories) {
+        _repositories = repositories;
+        notifyListeners();
+      },
+      error: (error) {
+        print("Error: $error");
+        //if error on repositories, don't show error.
+      },
+    );
   }
 
   ///

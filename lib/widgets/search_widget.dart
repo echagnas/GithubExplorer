@@ -101,20 +101,43 @@ Widget showAvatar(BuildContext context) {
   var viewModelStatus = Provider.of<SearchViewModel>(context).value;
   viewModelStatus.join(
     loading: () {
-      print("STATUS loading...");
-      //TODO show loader
+      widget = Expanded(
+        child: Container(
+          child: Center(
+            child: CircularProgressIndicator(
+              backgroundColor: primaryColor,
+              value: null,
+            ),
+          ),
+        ),
+      );
     },
-    empty: () {
-      print("STATUS empty");
-    },
+    empty: () {},
     issue: (ErrorService error) {
-      //TODO show error
-      print("STATUS issue");
+      widget = showError(context, error.message);
     },
     loaded: (value) {
-      print("STATUS loaded");
       widget = ProfileCardWidget(value);
     },
   );
   return widget;
+}
+
+///
+/// Show a dialog box
+///
+Widget showError(BuildContext context, String message) {
+  return AlertDialog(
+    title: Text(STR.error),
+    content: Text(message),
+    actions: <Widget>[
+      FlatButton(
+        child: Text(STR.ok),
+        onPressed: () {
+          Provider.of<SearchViewModel>(context, listen: false).reset();
+        },
+      )
+    ],
+    backgroundColor: accentColor,
+  );
 }

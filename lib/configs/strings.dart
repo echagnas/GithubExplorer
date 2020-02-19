@@ -11,4 +11,6 @@ class STR {
   static const gitHubRepo = "repos";
   static const searchUser = "Search";
   static const searchHint = "Enter username";
+  static const error = "Error";
+  static const ok = "Ok";
 }
