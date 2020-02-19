@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/widgets/avatar_widget.dart';
+import 'package:github_dashboard/widgets/card_widget.dart';
 
 import 'common_abstract_page.dart';
 
@@ -36,11 +37,20 @@ class RepositoryDetailPage extends StatelessWidget {
           SizedBox(
             height: VALUES.mediumMargin,
           ),
-          //TODO introduce the card extracts from ProfileCardWidget
-          Text("Language: ${arguments.language}"),
-          Text("Stars: ${arguments.stargazersCount}"),
-          Text("Description: ${arguments.description}"),
-          Text("URL: ${arguments.html_url}"),
+          CardWidget(
+            child: Padding(
+              padding: const EdgeInsets.all(VALUES.mediumMargin),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("Language: ${arguments.language}"),
+                  Text("Stars: ${arguments.stargazersCount}"),
+                  Text("Description: ${arguments.description}"),
+                  Text("URL: ${arguments.html_url}"),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
       appBarTitle: arguments.name,
