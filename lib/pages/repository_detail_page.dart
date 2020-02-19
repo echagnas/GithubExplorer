@@ -48,9 +48,12 @@ class RepositoryDetailPage extends StatelessWidget {
                   Text("Stars: ${arguments.stargazersCount}"),
                   Text("Description: ${arguments.description}"),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text("URL: "),
-                      LinkWidget(url: arguments.html_url),
+                      Expanded(
+                        child: LinkWidget(url: arguments.html_url),
+                      ),
                     ],
                   ),
                 ],
