@@ -8,6 +8,8 @@ You will see the photo and the name, and  below a list of the public repositorie
 
 Click on a repo to show detail on it.
 
+![Image Dashboard](./images/screenshot1.png) ![Image Dashboard](./images/screenshot2.png)
+
 ## Getting Started
 
 This repo uses annotations.\
@@ -27,5 +29,3 @@ static const accesstoken = ""; //Must be changed with your github token.
 ## BUGS
 - A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)\
 - in Unit test, the constructor of SearchViewModel seems to be not called...
-
-![Image Dashboard](./images/screenshot1.png)
