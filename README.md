@@ -27,3 +27,5 @@ static const accesstoken = ""; //Must be changed with your github token.
 ## BUGS
 - A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)\
 - in Unit test, the constructor of SearchViewModel seems to be not called...
+
+![Image Dashboard](./images/screenshot1.png)
