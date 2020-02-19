@@ -3,7 +3,7 @@ import 'package:github_dashboard/widgets/card_widget.dart';
 import 'package:github_dashboard/widgets/avatar_widget.dart';
 import 'package:github_dashboard/configs/themes.dart';
 import 'package:github_dashboard/configs/values.dart';
-import 'package:github_dashboard/providers/search_viewmodel.dart';
+import 'package:github_dashboard/viewmodels/search_viewmodel.dart';
 import 'package:github_dashboard/widgets/repository_list_widget.dart';
 import 'package:provider/provider.dart';
 

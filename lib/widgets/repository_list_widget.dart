@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github_dashboard/configs/themes.dart';
 import 'package:github_dashboard/models/repository.dart';
-import 'package:github_dashboard/providers/search_viewmodel.dart';
+import 'package:github_dashboard/viewmodels/search_viewmodel.dart';
 import 'package:github_dashboard/pages/repository_detail_page.dart';
 import 'package:provider/provider.dart';
 
@@ -42,12 +42,10 @@ class RepositoryListWidget extends StatelessWidget {
   ///
   /// Create argument for the  detail page
   ///
-  RepositoryDetailPageArgument _createDetailArguments(
-      BuildContext context, Repository repository) {
+  RepositoryDetailPageArgument _createDetailArguments(BuildContext context, Repository repository) {
     return RepositoryDetailPageArgument(
       name: repository.name,
-      avatar_url:
-          Provider.of<SearchViewModel>(context, listen: false).getAvatarUrl(),
+      avatar_url: Provider.of<SearchViewModel>(context, listen: false).getAvatarUrl(),
       description: repository.description,
       html_url: repository.html_url,
       language: repository.language,

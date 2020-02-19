@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/configs/strings.dart';
 import 'package:github_dashboard/configs/themes.dart';
-import 'package:github_dashboard/providers/search_viewmodel.dart';
+import 'package:github_dashboard/viewmodels/search_viewmodel.dart';
 import 'package:github_dashboard/widgets/profile_card_widget.dart';
 import 'package:provider/provider.dart';
 
