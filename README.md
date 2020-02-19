@@ -19,7 +19,7 @@ static const accesstoken = ""; //Must be changed with your github token.
 
 ## TODO
 [x] Widget for Avatar and Custom Card\
-[ ] Create 2 configurations, MOCK and DEV
+[x] Create 2 configurations, MOCK and DEV\
 [ ] Manage errors from WS\
 [ ] Unit tests\
 [ ] Dependency injection
