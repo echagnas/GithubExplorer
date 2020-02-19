@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_dashboard/widgets/avatar_widget.dart';
 import 'package:github_dashboard/configs/themes.dart';
 import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/providers/search_viewmodel.dart';
@@ -33,17 +34,11 @@ class _ProfileCardWidgetState extends State<ProfileCardWidget> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  //TODO Extract the Avatar widget
-                  Hero(
-                    tag: "avatar",
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50.0),
-                      child: Image.network(
+                  AvatarWidget(
+                    width: VALUES.avatarPictureWidth,
+                    height: VALUES.avatarPictureHeight,
+                    imageUrl:
                         Provider.of<SearchViewModel>(context).getAvatarUrl(),
-                        width: VALUES.avatarPictureWidth,
-                        height: VALUES.avatarPictureHeight,
-                      ),
-                    ),
                   ),
                   SizedBox(
                     width: VALUES.littleMargin,

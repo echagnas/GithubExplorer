@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:github_dashboard/configs/values.dart';
+import 'package:github_dashboard/widgets/avatar_widget.dart';
 
 import 'common_abstract_page.dart';
 
@@ -11,8 +12,7 @@ class RepositoryDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RepositoryDetailPageArgument arguments =
-        ModalRoute.of(context).settings.arguments;
+    final RepositoryDetailPageArgument arguments = ModalRoute.of(context).settings.arguments;
 
     //TODO test if the arguments exist else show error.
 
@@ -22,17 +22,10 @@ class RepositoryDetailPage extends StatelessWidget {
         children: <Widget>[
           Row(
             children: <Widget>[
-              //TODO replace by the widget extracts from ProfileCardWidget
-              Hero(
-                tag: "avatar",
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(50.0),
-                  child: Image.network(
-                    arguments.avatar_url,
-                    width: VALUES.littleAvatarPictureWidth,
-                    height: VALUES.littleAvatarPictureHeight,
-                  ),
-                ),
+              AvatarWidget(
+                width: VALUES.littleAvatarPictureWidth,
+                height: VALUES.littleAvatarPictureHeight,
+                imageUrl: arguments.avatar_url,
               ),
               SizedBox(
                 width: VALUES.mediumMargin,
