@@ -9,7 +9,7 @@ enum _ViewModelStatusType { empty, loading, issue, loaded }
 abstract class ViewModelStatus<T> {
   _ViewModelStatusType get _statusType;
 
-  R join<R>(R empty(), R loading(), R issue(ErrorService error), R loaded(T value)) {
+  R join<R>({R empty(), R loading(), R issue(ErrorService error), R loaded(T value)}) {
     switch (_statusType) {
       case _ViewModelStatusType.empty:
         return empty();

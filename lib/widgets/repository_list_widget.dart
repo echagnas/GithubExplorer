@@ -6,6 +6,11 @@ import 'package:github_dashboard/pages/repository_detail_page.dart';
 import 'package:provider/provider.dart';
 
 class RepositoryListWidget extends StatelessWidget {
+  final String avatarUrl;
+  final String userName;
+
+  const RepositoryListWidget({@required this.avatarUrl, @required this.userName});
+
   @override
   Widget build(BuildContext context) {
     var repositories = Provider.of<SearchViewModel>(context).getRepositories();
@@ -45,12 +50,12 @@ class RepositoryListWidget extends StatelessWidget {
   RepositoryDetailPageArgument _createDetailArguments(BuildContext context, Repository repository) {
     return RepositoryDetailPageArgument(
       name: repository.name,
-      avatar_url: Provider.of<SearchViewModel>(context, listen: false).getAvatarUrl(),
+      avatar_url: avatarUrl,
       description: repository.description,
       html_url: repository.html_url,
       language: repository.language,
       stargazersCount: repository.stargazers_count,
-      userName: Provider.of<SearchViewModel>(context, listen: false).getName(),
+      userName: userName,
     );
   }
 }

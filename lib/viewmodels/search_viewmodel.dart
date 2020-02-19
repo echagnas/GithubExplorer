@@ -2,24 +2,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:github_dashboard/models/profile.dart';
 import 'package:github_dashboard/models/repository.dart';
 import 'package:github_dashboard/repositories/github_repository.dart';
+import 'package:github_dashboard/utils/viewmodel_status.dart';
 
 ///
 /// ViewModel for the Search page.
 ///
-class SearchViewModel extends ChangeNotifier {
+class SearchViewModel extends ValueNotifier<ViewModelStatus<Profile>> {
   GitHubRepository repository;
 
-  SearchViewModel({this.repository});
+  //Initialisation with "Empty" status.
+  SearchViewModel({this.repository}) : super(Empty());
 
-  Profile profile;
   List<Repository> _repositories;
 
   ///
   /// Retrieve profile.
   ///
   void searchProfile(String login) {
+    value = Loading();
+    notifyListeners();
     repository.getProfile(login).then((resultProfile) {
-      profile = resultProfile;
+      value = Loaded(resultProfile);
       _getRepositories(login);
       notifyListeners();
     });
@@ -41,19 +44,5 @@ class SearchViewModel extends ChangeNotifier {
   ///
   List<Repository> getRepositories() {
     return _repositories ?? List<Repository>();
-  }
-
-  ///
-  /// Return the name of the user's repository.
-  ///
-  String getName() {
-    return profile?.name ?? "";
-  }
-
-  ///
-  /// Return the url of the user's photo.
-  ///
-  String getAvatarUrl() {
-    return profile?.avatar_url ?? "";
   }
 }

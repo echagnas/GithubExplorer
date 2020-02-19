@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:github_dashboard/models/profile.dart';
 import 'package:github_dashboard/widgets/card_widget.dart';
 import 'package:github_dashboard/widgets/avatar_widget.dart';
 import 'package:github_dashboard/configs/themes.dart';
 import 'package:github_dashboard/configs/values.dart';
-import 'package:github_dashboard/viewmodels/search_viewmodel.dart';
 import 'package:github_dashboard/widgets/repository_list_widget.dart';
-import 'package:provider/provider.dart';
 
 class ProfileCardWidget extends StatefulWidget {
+  final Profile profile;
+
+  ProfileCardWidget(this.profile);
+
   @override
-  _ProfileCardWidgetState createState() => _ProfileCardWidgetState();
+  _ProfileCardWidgetState createState() => _ProfileCardWidgetState(profile);
 }
 
 class _ProfileCardWidgetState extends State<ProfileCardWidget> {
+  final Profile profile;
+
+  _ProfileCardWidgetState(this.profile);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -27,14 +34,14 @@ class _ProfileCardWidgetState extends State<ProfileCardWidget> {
                   AvatarWidget(
                     width: VALUES.avatarPictureWidth,
                     height: VALUES.avatarPictureHeight,
-                    imageUrl: Provider.of<SearchViewModel>(context).getAvatarUrl(),
+                    imageUrl: profile.avatar_url,
                   ),
                   SizedBox(
                     width: VALUES.littleMargin,
                   ),
                   Expanded(
                     child: Center(
-                      child: Text(Provider.of<SearchViewModel>(context).getName()),
+                      child: Text(profile.name),
                     ),
                   ),
                 ],
@@ -46,7 +53,10 @@ class _ProfileCardWidgetState extends State<ProfileCardWidget> {
               ),
               Expanded(
                 flex: 1,
-                child: RepositoryListWidget(),
+                child: RepositoryListWidget(
+                  avatarUrl: profile.avatar_url,
+                  userName: profile.name,
+                ),
               ),
             ],
           ),

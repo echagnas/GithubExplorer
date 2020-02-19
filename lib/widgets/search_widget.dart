@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/configs/strings.dart';
 import 'package:github_dashboard/configs/themes.dart';
+import 'package:github_dashboard/utils/error.dart';
 import 'package:github_dashboard/viewmodels/search_viewmodel.dart';
 import 'package:github_dashboard/widgets/profile_card_widget.dart';
 import 'package:provider/provider.dart';
@@ -96,10 +97,24 @@ void searchProfile(BuildContext context, String login) {
 /// If no URL, show a empty Container.
 ///
 Widget showAvatar(BuildContext context) {
-  var avatarUrl = Provider.of<SearchViewModel>(context).getAvatarUrl();
-  if (avatarUrl.isNotEmpty) {
-    return ProfileCardWidget();
-  } else {
-    return Container();
-  }
+  Widget widget = Container();
+  var viewModelStatus = Provider.of<SearchViewModel>(context).value;
+  viewModelStatus.join(
+    loading: () {
+      print("STATUS loading...");
+      //TODO show loader
+    },
+    empty: () {
+      print("STATUS empty");
+    },
+    issue: (ErrorService error) {
+      //TODO show error
+      print("STATUS issue");
+    },
+    loaded: (value) {
+      print("STATUS loaded");
+      widget = ProfileCardWidget(value);
+    },
+  );
+  return widget;
 }
