@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_dashboard/pages/link_widget.dart';
 import 'package:github_dashboard/configs/values.dart';
 import 'package:github_dashboard/widgets/avatar_widget.dart';
 import 'package:github_dashboard/widgets/card_widget.dart';
@@ -46,7 +47,12 @@ class RepositoryDetailPage extends StatelessWidget {
                   Text("Language: ${arguments.language}"),
                   Text("Stars: ${arguments.stargazersCount}"),
                   Text("Description: ${arguments.description}"),
-                  Text("URL: ${arguments.html_url}"),
+                  Row(
+                    children: <Widget>[
+                      Text("URL: "),
+                      LinkWidget(url: arguments.html_url),
+                    ],
+                  ),
                 ],
               ),
             ),
