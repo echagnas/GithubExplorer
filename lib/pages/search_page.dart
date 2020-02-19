@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:github_dashboard/configs/configuration.dart';
 import 'package:github_dashboard/providers/search_viewmodel.dart';
 import 'package:github_dashboard/pages/common_abstract_page.dart';
-import 'package:github_dashboard/repositories/github_repository_impl.dart';
 import 'package:github_dashboard/widgets/search_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -13,8 +13,7 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<SearchViewModel>(
-      create: (context) =>
-          SearchViewModel(repository: GitHubRepositoryImpl()),
+      create: (context) => SearchViewModel(repository: CONFIGURATION.gitHubRepositoryBuilder()),
       child: CommonAbstractPage(
         child: SearchWidget(),
       ),
