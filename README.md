@@ -18,7 +18,7 @@ static const username = ""; //Must be changed with your github username.\
 static const accesstoken = ""; //Must be changed with your github token.
 
 ## TODO
-[ ] Widget for Avatar and Custom Card\
+[x] Widget for Avatar and Custom Card\
 [ ] Create 2 configurations, MOCK and DEV
 [ ] Manage errors from WS\
 [ ] Unit tests\
