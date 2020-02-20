@@ -34,9 +34,5 @@ static const accesstoken = ""; //Must be changed with your github token.
 - Image from URL
 - Icon of application with flutter_icons lib
 
-## TODO
-[ ] Unit tests\
-
 ## BUGS
-- A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)\
-- in Unit test, the constructor of SearchViewModel seems to be not called...
+- A rectangle appears below the card on iOS emulator due to elevation\
