@@ -24,7 +24,18 @@ class MyApp extends StatelessWidget {
       initialRoute: SearchPage.id,
       routes: {
         SearchPage.id: (_) => SearchPage(),
-        RepositoryDetailPage.id: (_) => RepositoryDetailPage(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == RepositoryDetailPage.id) {
+          return PageRouteBuilder(
+              pageBuilder: (_, __, ___) => RepositoryDetailPage(),
+              transitionsBuilder: (_, anim, __, child) {
+                return FadeTransition(opacity: anim, child: child);
+              },
+              settings: settings);
+        }
+        // unknown route
+        return MaterialPageRoute(builder: (context) => Container());
       },
     );
   }
