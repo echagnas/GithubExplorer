@@ -50,6 +50,9 @@ dev_dependencies:
   #flutter launcher icons
   flutter_launcher_icons: "^0.7.3"
 
+  #test
+  test: ^1.9.4
+
 flutter_icons:
   android: "launcher_icon"
   ios: true
