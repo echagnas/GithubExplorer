@@ -34,7 +34,7 @@ static const accesstoken = ""; //Must be changed with your github token.
 - Image from URL
 - Icon of application with flutter_icons lib
 - Unit tests
-- Transition animation beetween pages
+- Transition animation between pages
 
 ## BUGS
 - A rectangle appears below the card on iOS emulator due to elevation\
