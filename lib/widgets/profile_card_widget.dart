@@ -41,7 +41,7 @@ class _ProfileCardWidgetState extends State<ProfileCardWidget> {
                   ),
                   Expanded(
                     child: Center(
-                      child: Text(profile.name),
+                      child: Text(profile?.name ?? ""),
                     ),
                   ),
                 ],

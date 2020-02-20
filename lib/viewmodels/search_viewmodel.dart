@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:github_dashboard/configs/configuration.dart';
 import 'package:github_dashboard/models/profile.dart';
 import 'package:github_dashboard/models/repository.dart';
 import 'package:github_dashboard/repositories/github_repository.dart';
@@ -8,10 +9,11 @@ import 'package:github_dashboard/utils/viewmodel_status.dart';
 /// ViewModel for the Search page.
 ///
 class SearchViewModel extends ValueNotifier<ViewModelStatus<Profile>> {
-  GitHubRepository repository;
+  //Dependency Injection
+  GitHubRepository repository = di.get<GitHubRepository>();
 
   //Initialisation with "Empty" status.
-  SearchViewModel({this.repository}) : super(Empty());
+  SearchViewModel() : super(Empty());
 
   List<Repository> _repositories;
 

@@ -7,6 +7,8 @@ import 'package:github_dashboard/pages/search_page.dart';
 
 void main() {
   CONFIGURATION.setFlavors(FLAVOR.MOCK);
+  CONFIGURATION.init();
+
   runApp(MyApp());
 }
 
