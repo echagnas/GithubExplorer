@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 /// Page used to searching an user.
 ///
 class SearchPage extends StatelessWidget {
-  static final String id = "/search";
+  static const String id = "/search";
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<SearchViewModel>(

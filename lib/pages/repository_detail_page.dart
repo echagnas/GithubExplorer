@@ -10,7 +10,7 @@ import 'common_abstract_page.dart';
 /// Page used to show details of a repository.
 ///
 class RepositoryDetailPage extends StatelessWidget {
-  static final String id = "/detail";
+  static const String id = "/detail";
 
   @override
   Widget build(BuildContext context) {
