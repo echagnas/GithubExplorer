@@ -20,7 +20,7 @@ static const username = ""; //Must be changed with your github username.\
 static const accesstoken = ""; //Must be changed with your github token.
 
 ## Technical features
-- Hero animation\
+- Hero animation
 - Multi configuration (flavors like)
 - Dependency Injection (with get_it lib)
 - Clickable links (with link lib)
@@ -32,12 +32,9 @@ static const accesstoken = ""; //Must be changed with your github token.
 - Custom font
 - Styles, strings and dimensions in a separate file
 - Image from URL
+- Icon of application with flutter_icons lib
 
 ## TODO
-[x] Widget for Avatar and Custom Card\
-[x] Create 2 configurations, MOCK and DEV\
-[x] Manage errors from WS\
-[x] Dependency injection\
 [ ] Unit tests\
 
 ## BUGS
