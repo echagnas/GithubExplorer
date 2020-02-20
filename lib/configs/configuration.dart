@@ -3,7 +3,7 @@ import 'package:github_dashboard/repositories/github_repository.dart';
 import 'package:github_dashboard/repositories/github_repository_impl.dart';
 import 'package:github_dashboard/repositories/github_repository_mock_impl.dart';
 
-enum FLAVOR { MOCK, DEV }
+enum FLAVOR { MOCK, DEV, RELEASE }
 
 GetIt di = GetIt.instance;
 
@@ -17,6 +17,9 @@ class CONFIGURATION {
         break;
       case FLAVOR.MOCK:
         di.registerLazySingleton<GitHubRepository>(() => GitHubRepositoryMockImpl());
+        break;
+      case FLAVOR.RELEASE:
+        di.registerLazySingleton<GitHubRepository>(() => GitHubRepositoryImpl());
         break;
     }
   }
