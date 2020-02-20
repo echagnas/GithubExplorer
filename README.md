@@ -19,12 +19,26 @@ Check the strings.dart file, and add your github username and a github token (to
 static const username = ""; //Must be changed with your github username.\
 static const accesstoken = ""; //Must be changed with your github token.
 
+## Technical features
+- Hero animation\
+- Multi configuration (flavors like)
+- Dependency Injection (with get_it lib)
+- Clickable links (with link lib)
+- HTTP calls (with http lib)
+- JSon decode
+- Providers
+- architecture MVVM
+- Generated models (with json_annotation)
+- Custom font
+- Styles, strings and dimensions in a separate file
+- Image from URL
+
 ## TODO
 [x] Widget for Avatar and Custom Card\
 [x] Create 2 configurations, MOCK and DEV\
 [x] Manage errors from WS\
+[x] Dependency injection\
 [ ] Unit tests\
-[ ] Dependency injection
 
 ## BUGS
 - A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)\
