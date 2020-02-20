@@ -11,7 +11,7 @@ class SearchViewModel extends ValueNotifier<ViewModelStatus<Profile>> {
   GitHubRepository repository;
 
   //Initialisation with "Empty" status.
-  SearchViewModel({this.repository}) : super(Empty());
+  SearchViewModel(this.repository) : super(Empty());
 
   List<Repository> _repositories;
 

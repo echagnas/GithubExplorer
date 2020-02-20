@@ -29,3 +29,19 @@ static const accesstoken = ""; //Must be changed with your github token.
 ## BUGS
 - A rectangular container appears below the card on iOS emulator (not already test on real iOS phone)\
 - in Unit test, the constructor of SearchViewModel seems to be not called...
+
+## INJECTION
+Use of the Google lib "inject" (https://github.com/google/inject.dart).\
+A example can be find here: https://blog.usejournal.com/compile-time-dependency-injection-in-flutter-95bb190b4a71\
+
+BUILD ERROR:\
+I had to upgrade some dependencies in the inject.dart module because there was a lot of\
+incompatibility, and I had a error during build:\
+[SEVERE] inject.dart/package/inject_generator/lib/src/context.dart:106:51: \
+Error: Method not found: 'ParsedLibraryResultImpl.tmp'.\
+var parsedLibrary = ParsedLibraryResultImpl.tmp(element.library);\ 
+
+Solution found on internet: 
+use element.library.session.getParsedLibraryByElement(element.library);
+instead of ParsedLibraryResultImpl.tmp(element.library); in Context.dart line 106
+

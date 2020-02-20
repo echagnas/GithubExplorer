@@ -4,13 +4,26 @@ import 'package:github_dashboard/configs/strings.dart';
 import 'package:github_dashboard/configs/themes.dart';
 import 'package:github_dashboard/pages/repository_detail_page.dart';
 import 'package:github_dashboard/pages/search_page.dart';
+import 'package:github_dashboard/repositories/github_repository.dart';
+import 'package:inject/inject.dart';
 
-void main() {
-  CONFIGURATION.setFlavors(FLAVOR.MOCK);
-  runApp(MyApp());
+import 'di/bloc_injector.dart';
+import 'di/bloc_module.dart';
+
+/*void main() async {
+  //CONFIGURATION.setFlavors(FLAVOR.MOCK);
+  //runApp(MyApp());
+
+  var container = await BlocInjector.create(BlocModule());
+  runApp(container.app);
 }
 
 class MyApp extends StatelessWidget {
+  GitHubRepository repository;
+
+  @provide
+  MyApp(this.repository);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,3 +37,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/
