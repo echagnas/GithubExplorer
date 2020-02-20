@@ -33,6 +33,7 @@ static const accesstoken = ""; //Must be changed with your github token.
 - Styles, strings and dimensions in a separate file
 - Image from URL
 - Icon of application with flutter_icons lib
+- Unit tests
 
 ## BUGS
 - A rectangle appears below the card on iOS emulator due to elevation\
