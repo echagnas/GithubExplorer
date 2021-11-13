@@ -1,5 +1,7 @@
 # github_dashboard
 
+TODO : A mettre à jour avec les nouveautés de Flutter !
+
 A Flutter application to show public repositories on GitHub.
 
 Enter a github username and click the "search" button.
